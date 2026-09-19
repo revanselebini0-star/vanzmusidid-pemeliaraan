@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V MUSIC — Maintenance</title>
+  <link rel="icon" type="image/png" href="https://cdn.phototourl.com/free/2026-09-19-571b25e0-aa49-47c1-9fa7-8f7127a2a4cd.png">
+  <link rel="apple-touch-icon" href="https://cdn.phototourl.com/free/2026-09-19-448a48bf-127b-441c-b4ec-527d868ca270.png">
+  <meta name="theme-color" content="#ffffff">
+  <style>
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      color: #342536;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Gambar lagu milik desain asli, dibuat sangat samar seperti screenshot */
+    .music-art {
+      position: absolute;
+      z-index: 0;
+      left: 0;
+      top: 34%;
+      width: 100%;
+      height: auto;
+      opacity: .16;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .fade {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,.98) 0%,
+        rgba(255,255,255,.96) 44%,
+        rgba(255,255,255,.72) 58%,
+        rgba(255,255,255,.30) 75%,
+        rgba(255,255,255,.05) 100%
+      );
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      min-height: 100vh;
+      text-align: center;
+      padding-top: clamp(110px, 26vh, 188px);
+    }
+
+    .brand {
+      display: block;
+      width: min(300px, 42vw);
+      height: auto;
+      margin: 0 auto 10px;
+      object-fit: contain;
+    }
+
+    h1 {
+      margin: 0 auto;
+      max-width: 760px;
+      font-size: clamp(22px, 2vw, 25px);
+      line-height: 1.25;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+    }
+
+    .subtitle {
+      margin: 12px auto 0;
+      max-width: 650px;
+      padding: 0 18px;
+      font-size: clamp(13px, 1.2vw, 15px);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    /* Pada layar dengan rasio seperti gambar contoh, posisi dibuat sangat dekat */
+    @media (min-width: 900px) and (min-height: 600px) {
+      .content {
+        padding-top: 188px;
+      }
+
+      .brand {
+        width: 300px;
+        margin-bottom: 9px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .subtitle {
+        font-size: 15px;
+        margin-top: 12px;
+      }
+    }
+
+    /* HP portrait: tetap mempertahankan komposisi desain, tetapi semua elemen
+       mengecil dan berpindah secara proporsional agar tidak terpotong. */
+    @media (max-width: 600px) {
+      body {
+        min-height: 100svh;
+        overflow: hidden;
+      }
+
+      .content {
+        min-height: 100svh;
+        padding: 20svh 16px 0;
+      }
+
+      .brand {
+        width: min(62vw, 245px);
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        max-width: 100%;
+        padding: 0;
+        font-size: clamp(19px, 6vw, 24px);
+        line-height: 1.22;
+      }
+
+      .subtitle {
+        max-width: 92%;
+        margin-top: 14px;
+        padding: 0;
+        font-size: clamp(12px, 3.7vw, 15px);
+        line-height: 1.4;
+      }
+
+      .music-art {
+        top: 47%;
+        left: -24%;
+        width: 148%;
+        max-width: none;
+        opacity: .15;
+      }
+
+      .fade {
+        background: linear-gradient(
+          to bottom,
+          rgba(255,255,255,.99) 0%,
+          rgba(255,255,255,.97) 45%,
+          rgba(255,255,255,.74) 62%,
+          rgba(255,255,255,.22) 88%,
+          rgba(255,255,255,.05) 100%
+        );
+      }
+    }
+
+    /* HP sangat kecil */
+    @media (max-width: 380px) {
+      .content {
+        padding-top: 17svh;
+      }
+
+      .brand {
+        width: 58vw;
+        margin-bottom: 14px;
+      }
+
+      h1 {
+        font-size: 18px;
+      }
+
+      .subtitle {
+        font-size: 11.5px;
+        max-width: 96%;
+      }
+
+      .music-art {
+        top: 49%;
+        left: -34%;
+        width: 168%;
+      }
+    }
+
+    /* HP landscape */
+    @media (max-height: 500px) and (orientation: landscape) {
+      body {
+        min-height: 100svh;
+        overflow: hidden;
+      }
+
+      .content {
+        padding-top: 7svh;
+      }
+
+      .brand {
+        width: min(27vh, 220px);
+        margin-bottom: 8px;
+      }
+
+      h1 {
+        font-size: clamp(17px, 4.2vh, 23px);
+        line-height: 1.15;
+      }
+
+      .subtitle {
+        margin-top: 8px;
+        font-size: clamp(10px, 2.5vh, 14px);
+      }
+
+      .music-art {
+        top: 40%;
+        width: 120%;
+        left: -10%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img
+    class="music-art"
+    src="https://cdn.phototourl.com/free/2026-09-19-84efe5d8-82dc-4104-8aea-1ef064f27339.png"
+    alt=""
+    aria-hidden="true"
+  >
+
+  <div class="fade"></div>
+
+  <main class="content">
+    <img
+      class="brand"
+      src="https://cdn.phototourl.com/free/2026-09-19-448a48bf-127b-441c-b4ec-527d868ca270.png"
+      alt="V MUSIC"
+    >
+
+    <h1>
+      Website Ini Sedang Ditutup Sementara &amp;<br>
+      Sedang Proses Pemeliharaan
+    </h1>
+
+    <p class="subtitle">
+      Mohon untuk tunggu update dan rilisnya! Kami sedang bekerja keras untuk memberikan<br>
+      pengalaman terbaik untuk Anda.
+    </p>
+  </main>
+</body>
+</html>
